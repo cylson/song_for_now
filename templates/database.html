@@ -1,21 +1,7 @@
 <!doctype html>
 
-<ul>
-
-    <a href="/tag/Rock">Rock</a>
-    <a href="/tag/Electronic">Electronic</a>
-    <a href="/tag/Pop">Pop</a>
-    <a href="/tag/Folk%2C+World%2C+%26+Country">Folk, World & Country</a>
-    <a href="/tag/Jazz">Jazz</a>
-    <a href="/tag/Funk+%2F+Soul">Funk & Soul</a>
-    <a href="/tag/Hip+Hop">Hip Hop</a>
-    <a href="/tag/Classical">Classical</a>
-    <a href="/tag/Latin">Latin</a>
-    <a href="/tag/Reggae">Reggae</a>
-    <a href="/tag/Stage+%26+Screen">Stage & Screen</a>
-    <a href="/tag/Blues">Blues</a>
-    <a href="/tag/Non-Music">Non-Music</a>
-    <a href="/tag/Children%27s">Children's</a>
-    <a href="/tag/Brass+%26+Military">Brass & Military</a>
-
-</ul>
+<h1>
+    {% for item in database.keys() %}
+        <a href="/tag/{{ item }}">{{ item.replace('+',' ') }}</a>
+    {% endfor %}
+</h1>

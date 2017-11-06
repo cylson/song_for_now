@@ -1,14 +1,18 @@
 import json
+import urllib
+
 from flask import Flask, render_template, redirect, url_for, request
 import os
 import random
+from urllib.parse import unquote
 
 
 with open("database.txt", "r") as f:
     d = f.read()
 
     
-database = json.loads(d)
+database_quoted = json.loads(d)
+database = { urllib.parse.unquote(k) : v for k,v in database_quoted.items() }
 
 
 app = Flask(__name__)
